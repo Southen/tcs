@@ -31,13 +31,10 @@ namespace TCS {
 		extern static int SHGetKnownFolderPath([MarshalAs(UnmanagedType.LPStruct)] Guid folderId, uint flags, IntPtr token, [MarshalAs(UnmanagedType.LPWStr)] out string pszPath);
 
 		public static void Main(string[] args) {
-			//Console.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
-
 			if (SHGetKnownFolderPath(SavedGames, 0, IntPtr.Zero, out string path) != 0) {
 				throw new DirectoryNotFoundException("Saved Games folder not found");
 			}
 			string logs = Path.GetFullPath(Path.Combine(path, "Frontier Developments/Elite Dangerous"));
-			Console.WriteLine("Analysing " + logs);
 
 			var counts = Enum.GetValues<ThargoidRewards>().ToDictionary<ThargoidRewards, ThargoidRewards, uint>(s => s, s => 0);
 			int missionRewards = 0;
@@ -45,7 +42,8 @@ namespace TCS {
 			foreach (var log in Directory.GetFiles(logs, "Journal.*.log").OrderBy(s => s)) {
 				var fs = new FileStream(log, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 				var sr = new StreamReader(fs);
-				//Console.WriteLine(log);
+				Console.SetCursorPosition(0, Console.CursorTop);
+				Console.Write("Analysing " + log);
 
 				var lines = sr.ReadToEnd();
 				if (!lines.Contains("Thargoid")) continue;
@@ -75,7 +73,7 @@ namespace TCS {
 					}
 				}
 			}
-
+			Console.SetCursorPosition(0, Console.CursorTop);
 			Console.WriteLine("--------------------------------------------");
 			Console.WriteLine("          THARGOID COMBAT STATS             ");
 			Console.WriteLine("--------------------------------------------");
@@ -86,7 +84,7 @@ namespace TCS {
 			Console.WriteLine(" Hydra Variant Interceptors killed:     {0,4}", counts[ThargoidRewards.Hydra]);
 			Console.WriteLine("--------------------------------------------");
 			Console.WriteLine(" Total Thargoids killed:                {0,4}", counts.Sum(s => s.Value));
-			Console.WriteLine("");
+			Console.WriteLine();
 			Console.WriteLine(" Total Thargoid mission payouts:  {0,10:n0}", missionRewards);
 		}
 

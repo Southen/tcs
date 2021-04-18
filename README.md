@@ -6,8 +6,8 @@ Open source .NET 5 rewrite of <https://github.com/canonn-science/TCS>, a tool to
 
 	> git clone https://github.com/Southen/tcs
 	> cd tcs
-	> msbuild TCS.csproj
-	> bin\Debug\net5.0\TCS.exe
+	> dotnet publish -c Release -r win-x64 -p:PublishSingleFile=true --self-contained true
+	> bin\Release\net5.0\win-x64\publish\TCS.exe
 
 # License
 
