@@ -26,3 +26,7 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# Acknowledgements
+
+Icon based on [a GIF](https://www.reddit.com/r/EliteDangerous/comments/ezc3a6/i_made_a_thargoid_bonk_gif_emoji_for_discord/) by CMDR Arburich.
