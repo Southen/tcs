@@ -1,0 +1,3 @@
+*.cs	 text diff=csharp
+*.csproj text
+*.sln    text

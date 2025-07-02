@@ -1,33 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <PublishSingleFile>true</PublishSingleFile>
     <SelfContained>true</SelfContained>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <PublishTrimmed>true</PublishTrimmed>
+    <PublishTrimmed>False</PublishTrimmed>
     <PlatformTarget>x64</PlatformTarget>
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Copyright>Copyright © 2021 Sebastian Southen</Copyright>
     <PackageLicenseExpression>GPLv3</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Southen/tcs</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Southen/tcs</RepositoryUrl>
-    <AssemblyVersion>1.0.2</AssemblyVersion>
-    <FileVersion>1.0.2</FileVersion>
+    <AssemblyVersion>1.0.3</AssemblyVersion>
+    <FileVersion>1.0.3</FileVersion>
     <Product>Thargoid Combat Statistics</Product>
     <PackageIcon>thargbonk.ico</PackageIcon>
     <ApplicationIcon>thargbonk.ico</ApplicationIcon>
     <PackageTags>elite-dangerous</PackageTags>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-
   <ItemGroup>
     <None Include=".github\workflows\dotnet.yml" />
     <None Include="thargbonk.ico">
       <Pack>True</Pack>
-      <PackagePath></PackagePath>
+      <PackagePath>
+      </PackagePath>
     </None>
   </ItemGroup>
-
 </Project>

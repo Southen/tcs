@@ -1,13 +1,13 @@
 # Thargoid Combat Statistics
 
-Open source .NET 5 rewrite of <https://github.com/canonn-science/TCS>, a tool to help you see your Elite Dangerous Thargoid combat statistics.
+Open source .NET remake of <https://github.com/canonn-science/TCS>, a tool to help you see your Elite Dangerous Thargoid combat statistics.
 
 ## Usage
 
 	> git clone https://github.com/Southen/tcs
 	> cd tcs
 	> dotnet publish -c Release -r win-x64 -p:PublishSingleFile=true --self-contained true
-	> bin\Release\net5.0\win-x64\publish\TCS.exe
+	> bin\Release\net8.0\win-x64\publish\TCS.exe
 
 # License
 
